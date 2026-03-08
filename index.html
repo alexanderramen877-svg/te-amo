@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Corina 🌿</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcome-screen">
+        <div id="welcome-text-container"></div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <div class="content-wrapper">
+            <div class="cards-grid">
+                <div class="card rot-left" onclick="openCard(1)">✉️</div>
+                <div class="card rot-right" onclick="openCard(2)">✉️</div>
+                <div class="card rot-mid" onclick="openCard(3)">✉️</div>
+                <div class="card special" onclick="openCard('special')">💌</div>
+                <div class="card rot-right" onclick="openCard(4)">✉️</div>
+                <div class="card rot-left" onclick="openCard(5)">✉️</div>
+                <div class="card rot-mid" onclick="openCard(6)">✉️</div>
+            </div>
+            <button id="final-btn" onclick="startFinalSequence()">Para el amor de mi vida</button>
+        </div>
+    </div>
+
+    <div id="card-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="deco-hearts">❤️ ✨ ❤️</div>
+            <span class="close-btn" onclick="closeCard()">✕</span>
+            <div id="typewriter-text"></div>
+        </div>
+    </div>
+
+    <div id="final-screen" class="hidden">
+        <div id="heart-container">
+            <svg class="heart-svg" viewBox="0 0 32 32">
+                <path d="M16 28.5L14.1 26.8C7.33 20.65 3 16.74 3 12.05C3 8.22 6.02 5.2 9.85 5.2C12.01 5.2 14.09 6.21 15.46 7.82L16 8.44L16.54 7.82C17.91 6.21 19.99 5.2 22.15 5.2C25.98 5.2 29 8.22 29 12.05C29 16.74 24.67 20.65 17.9 26.81L16 28.5Z" fill="white"/>
+            </svg>
+            <h1 id="name-corina">Corina</h1>
+        </div>
+        <div id="extra-final-text" class="hidden"></div>
+    </div>
+
+    <audio id="bg-music" src="https://www.bensound.com/bensound-music/bensound-love.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+:root {
+    --green-strong: #428142;
+    --sage-bg: #72b972;
+    --sage-accent: #6b8e6b;
+}
+
+body, html {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--sage-bg);
+    display: flex; justify-content: center; align-items: center;
+    overflow: hidden;
+}
+
+.hidden { display: none !important; }
+
+/* Bienvenida Cinematográfica */
+#welcome-screen {
+    position: fixed; inset: 0;
+    background: var(--green-strong);
+    color: rgb(0, 0, 0);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1000;
+    text-align: center;
+}
+
+#welcome-text-container {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    padding: 20px;
+}
+
+/* Tablero de Cartas Centrado */
+.content-wrapper {
+    display: flex; flex-direction: column; align-items: center;
+}
+
+.cards-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 25px; margin-bottom: 40px;
+    transition: all 1s ease;
+}
+
+.card { font-size: 50px; cursor: pointer; }
+.rot-left { transform: rotate(-10deg); }
+.rot-right { transform: rotate(10deg); }
+.card.special { grid-column: 2; font-size: 75px; }
+
+#final-btn {
+    padding: 12px 25px; border-radius: 25px;
+    border: 2px rgb(0, 0, 0);
+    background: rgb(122, 38, 225); color:rgb(0, 0, 0);
+    font-weight: bold; cursor: pointer;
+}
+
+/* Modal y Texto de Cartas */
+.modal {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: rgb(127, 190, 105); padding: 35px 20px;
+    width: 80%; border-radius: 20px; text-align: center;
+}
+
+#typewriter-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem; color: #000000;
+}
+
+/* Final: Corazón y Texto Bonito */
+#final-screen {
+    position: fixed; inset: 0;
+    background:rgb(29, 177, 98);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.heart-svg { width: 300px; animation: zoomIn 1.5s forwards; }
+
+#name-corina {
+    position: absolute;
+    top: 45%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--sage-accent);
+    margin: 0;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+#extra-final-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: rgb(0, 0, 0); /* Color verde bonito */
+    padding: 20px;
+    text-align: center;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1.2); /* O el tamaño que prefieras */
+        opacity: 1;
+    }
+}
+#heart-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: zoomIn 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards; /* La animación va aquí */
+}
+.heart-svg {
+    width: 200px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+    display: block;
+}
